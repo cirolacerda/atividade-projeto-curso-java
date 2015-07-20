@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+<h:body>
+	
+	<h:form>
+	<h3>Cadastro de curso</h3>
+	<h:panelGrid columns="2">
+	Nome: <h:inputText id="nome" value="#{cursoBean.curso.nome}"></h:inputText> <br/>
+	Ementa:  <h:inputText id="ementa" value="#{cursoBean.curso.ementa}"></h:inputText> <br/>
+	Carga Horária: <h:inputText id="email" value="#{cursoBean.curso.cargaHoraria}"></h:inputText> <br/>
+	<h:inputHidden value="#{cursoBean.curso.id}"></h:inputHidden>
+	</h:panelGrid>
+	<h:commandButton value="salvar" action="#{cursoBean.salvar()}"></h:commandButton>
+	
+	</h:form>
+
+
+</h:body>
+
+
+</html>

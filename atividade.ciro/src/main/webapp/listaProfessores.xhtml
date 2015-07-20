@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<h:body>
+
+	<h:form>
+		<h3>Lista professores</h3>
+
+		<h:dataTable value="#{professorBean.professores}" var="professor" border="1">
+			<h:column>
+				<f:facet name="header">Professor</f:facet>
+		#{professor.nome} 
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+
+				<h:commandLink action="cadastroProfessor.jsf" value="alterar">
+					<f:param name="id" value="#{professor.id}"></f:param>
+				</h:commandLink>
+		|
+		<h:commandLink action="#{professorBean.excluir(professor)}" value="excluir ">
+				</h:commandLink>
+			</h:column>
+
+		</h:dataTable>
+	</h:form>
+
+	<br></br>
+	<a href="index.html">Inicio</a>
+
+</h:body>
+
+
+</html>
